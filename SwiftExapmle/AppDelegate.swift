@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+//import "HomeVC"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        
+        let home : UIViewController = HomeVC(nibName: "HomeVC", bundle:nil)
+        
+        let nc : UINavigationController = UINavigationController(rootViewController: home);
+
+        self.window!.rootViewController = nc
+        self.window!.makeKeyAndVisible()
+        
         return true
     }
 
